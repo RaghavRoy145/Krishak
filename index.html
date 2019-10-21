@@ -4,10 +4,57 @@
         <title>
             Krishak
         </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link rel="stylesheet" href="stylesheet.css" />
     </head>
     <body>
-        
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Login</a></li>
+            <li><a href="#!">SignUp</a></li>
+        </ul>
+        <nav>
+            <div class="nav-wrapper teal">
+                <!-- <a href="#" class="brand-logo">Insert Logo here</a> -->
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Market</a></li>
+                    <li><a href="badges.html">Forum</a></li>
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">My Account<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="imageCarousel">
+            <img class="leftImageCarousel">
+            <img class="mainImageCarousel">
+            <img class="rightImageCarousel">
+        </div>
+        <div class="title">
+            KRISHAK
+        </div>
+        <div class="short-des">
+            <p class="des-title">
+                What is Krishak?
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Et, placeat fuga aut quidem doloribus nihil laboriosam laborum optio facere totam alias officiis saepe sequi natus. Tempore fugiat sed porro nisi!    <br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione debitis blanditiis possimus pariatur nostrum distinctio quas voluptates<br> accusantium ipsa delectus molestias iure ut exercitationem tempora saepe a, odio itaque excepturi?
+            </p>
+        </div>
+        <div class="home-buttons">
+            <table>
+                <tr>
+                    <td><img src="./images/sample.jpeg" class="table-img"><br>Sample Text</td>
+                    <td><img src="./images/sample.jpeg" class="table-img"><br>Sample Text</td>
+                    <td><img src="./images/sample.jpeg" class="table-img"><br>Sample Text</td>
+                </tr>
+                <tr>
+                    <td><img src="./images/sample.jpeg" class="table-img"><br>Sample Text</td>
+                    <td><img src="./images/sample.jpeg" class="table-img"><br>Sample Text</td>
+                    <td><img src="./images/sample.jpeg" class="table-img"><br>Sample Text</td>
+                </tr>
+            </table>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

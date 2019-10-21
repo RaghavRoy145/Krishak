@@ -1,41 +1,30 @@
-var lat,lon;
+$(document).ready(function () {
+  $('.dropdown-trigger').dropdown();
+  $('.carousel').carousel();  
+});
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+var imageleft = 0;
+var imagemain = 1;
+var imageright = 2;
+
+var imageObject = {
+  0 : './images/homeimage1.jpg',
+  1: './images/homeimage2.jpg',
+  2: './images/homeimage3.jpg',
 }
 
-function showPosition(position) {
-  console.log(position.coords.latitude + " and " + position.coords.longitude);
-  lat = position.coords.latitude;
-  lon = position.coords.longitude;
-  var url = 'https://api.darksky.net/forecast/032cb3132b9c440de5990c8388cf62ef/'+lat+','+lon;
-  $.ajax({
-    url,
-    success: function(res){
-      PrintDetails(res)
-    },
-    dataType: 'jsonp',  
-  });
-}
-getLocation();
+document.getElementsByClassName('leftImageCarousel')[0].setAttribute("src", imageObject[imageleft]);
+document.getElementsByClassName('mainImageCarousel')[0].setAttribute("src", imageObject[imagemain]);
+document.getElementsByClassName('rightImageCarousel')[0].setAttribute("src", imageObject[imageright]);
 
-function PrintDetails(res) {
-  console.log(res);
-  var x = document.createElement("h1");
-  x.innerText = "The current weather is " + Math.floor((res.currently.temperature-32)*5/9)+" C"
-  document.getElementsByTagName('body')[0].appendChild(x);
-
-  var y = document.createElement("h3");
-  y.innerText = "Today's Forecast : " + res.currently.summary;
-  document.getElementsByTagName('body')[0].appendChild(y);
-  for(i=0;i<7;i++){
-    var thatDay = res.daily.data[i].precipProbability;
-    var y = document.createElement("h3");
-    y.innerText = "Day "+i+"'s Precipitation : " +thatDay;
-    document.getElementsByTagName('body')[0].appendChild(y);
-  }
-}
+setInterval(function(){
+  imageleft +=1;
+  imageleft = imageleft%3;
+  imagemain += 1;
+  imagemain = imagemain%3;
+  imageright += 1;
+  imageright = imageright%3;
+  document.getElementsByClassName('leftImageCarousel')[0].setAttribute("src", imageObject[imageleft]);
+  document.getElementsByClassName('mainImageCarousel')[0].setAttribute("src", imageObject[imagemain]);
+  document.getElementsByClassName('rightImageCarousel')[0].setAttribute("src", imageObject[imageright ]);
+},2000);

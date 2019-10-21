@@ -1,0 +1,73 @@
+@font-face{
+    font-family: krishak;
+    src: url(./css/fonts/SAMAN___.TTF);
+}
+.nav-wrapper{
+    background: teal;
+}
+.imageCarousel{
+    position: relative;
+    margin-top: 30px;
+    height: 350px;
+}
+.mainImageCarousel{
+    position: absolute;
+    top: 0%;
+    z-index: 3;
+    width: 40%;
+    height: 100%;
+    left: 30%;
+}
+.leftImageCarousel {
+    position: absolute;
+    top: 2.5%;
+    z-index: -1;
+    width: 20%;
+    height: 90%;
+    left: 25%;
+    opacity: 0.8;
+}
+.rightImageCarousel {
+    position: absolute;
+    top: 2.5%;
+    z-index: -1;
+    width: 30%;
+    height: 90%;
+    left: 45%;
+    opacity: 0.8;
+}
+.title{
+    position: relative;
+    width: 100%;
+    margin-top:30px;
+    text-align: center;
+    font-size: 550%;
+    font-family: krishak;
+}
+.des-title{
+    /* font-family: krishak; */
+    font-size: 200%;
+}
+.short-des{
+    padding-left: 20px;
+}
+.home-buttons{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 10%;
+    width: 80%;
+    background: rgb(231, 231, 231);
+    height: auto;
+    width: 80%;
+    border-radius: 10px;
+    /* padding: 10px; */
+}
+.table-img{
+    width: 60%;
+    height: 40%;
+    margin-left: 20%;
+    border-radius: 10px;
+}
+td{
+    text-align: center;
+}
