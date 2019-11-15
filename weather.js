@@ -24,17 +24,34 @@ getLocation();
 
 function PrintDetails(res) {
   console.log(res);
-  var x = document.createElement("h1");
-  x.innerText = "The current weather is " + Math.floor((res.currently.temperature-32)*5/9)+" C"
-  document.getElementsByClassName('weather')[0].appendChild(x);
-
-  var y = document.createElement("h3");
-  y.innerText = "Today's Forecast : " + res.currently.summary;
-  document.getElementsByClassName('weather')[0].appendChild(y);
-  for(i=0;i<7;i++){
-    var thatDay = res.daily.data[i].precipProbability;
-    var y = document.createElement("h5");
-    y.innerText = "Day "+i+"'s Precipitation : " +thatDay;
-    document.getElementsByClassName('weather')[0].appendChild(y);
+  var currentTemp = Math.floor((res.currently.temperature-32)*(5/9));
+  var summary = res.currently.summary;
+  var humidity = res.currently.humidity;
+  var precProb = res.currently.precipProbability;
+  var cloudCover = res.currently.cloudCover;
+  document.getElementsByClassName('currentTemperature')[0].innerHTML = currentTemp + " °C";
+  document.getElementsByClassName('currentSummary')[0].innerHTML = summary;
+  document.getElementById('humidity').innerText = humidity;
+  document.getElementById('precip').innerText = precProb;
+  document.getElementById('cloud').innerText = cloudCover;
+  for(i=1;i<8;i++){
+    var h4 = document.createElement('h4');
+    h4.innerText = "Day "+i;
+    var p1 = document.createElement('p');
+    p1.innerText = "High Temperature : " + Math.floor((res.daily.data[i].temperatureHigh - 32) * (5 / 9)) + " °C";
+    var p2 = document.createElement('p');
+    p2.innerText = "Low Temperature : " + Math.floor((res.daily.data[i].temperatureLow - 32) * (5 / 9)) + " °C";
+    var p3 = document.createElement('p');
+    p3.innerText = "Humidity : " + res.daily.data[i].humidity;
+    var p4 = document.createElement('p');
+    p4.innerText = "Precipitation Probability : " + res.daily.data[i].precipProbability;
+    var div = document.createElement('div');
+    div.setAttribute('class', 'futureContainer')
+    div.appendChild(h4);
+    div.appendChild(p1);
+    div.appendChild(p2);
+    div.appendChild(p3);
+    div.appendChild(p4);
+    document.getElementById('futurePredictions').appendChild(div);
   }
 }

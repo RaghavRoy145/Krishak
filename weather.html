@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link rel="stylesheet" href="./css/weather.css" />
     </head>
     <body>
-        <div class="weather"></div>
+        <div class="navbar">
+            <div class="nav-left">
+                <a href="./index.html">Home</a>
+                <a class="active" href="./weather.html">Weather</a>
+                <a href="./marketplace.html">Market Place</a>
+                <a href="./forums.html">Forums</a>
+            </div>
+            <div class="nav-right">
+                <a href="signup.html">Sign Up</a>
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+        <img class="weatherImg" src="./images/sun.png">
+        <p class="headerText">Weather</p>
+        <div class="currentWeather">
+            <p style="width: 100%; font-family: Google; text-align: center; color: rgb(38, 150, 113);">Current Weather</p>
+            <p class="currentTemperature">Loading</p>
+            <p class="currentSummary">Cloudy with a chance of meatballs</p>
+            <table>
+                <tr>
+                    <th>Humidity</th>
+                    <th>Precipitation Probability</th>
+                    <th>Cloud Cover</th>
+                </tr>
+                <tr>
+                    <td id="humidity">Loading</td>
+                    <td id="precip">Loading</td>
+                    <td id="cloud">Loading</td>
+                </tr>
+            </table>
+        </div>
+        <div id="futurePredictions">
+            
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="weather.js"></script>
+
     </body>
 </html>

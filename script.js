@@ -28,3 +28,5 @@ setInterval(function(){
   document.getElementsByClassName('mainImageCarousel')[0].setAttribute("src", imageObject[imagemain]);
   document.getElementsByClassName('rightImageCarousel')[0].setAttribute("src", imageObject[imageright ]);
 },2000);
+
+document.getElementsByClassName('.table-img')

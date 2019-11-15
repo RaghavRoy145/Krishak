@@ -1,0 +1,50 @@
+.login-container{
+    width: 30%;
+    background:white;
+    padding: 20px;
+    margin-top: 15%;
+    margin-left: 35%;
+    border-radius: 5px;
+}
+body{
+    background: url(../images/background.png);
+}
+.usernameLogin{
+    width: 80%;
+    margin-left: 10%;
+    height: 30px;
+    border: none;
+    border-bottom: orange solid;
+    margin-top: 50px;
+    transition: border-bottom 0.3s ease;
+}
+.usernameLogin:focus{
+    outline: none;
+    border-bottom: rgb(119, 219, 250) solid;
+    
+}
+.passwordLogin {
+    width: 80%;
+    margin-left: 10%;
+    height: 30px;
+    border: none;
+    border-bottom: orange solid;
+    padding-top:50px ;
+    transition: border-bottom 0.3s ease;
+}
+
+.passwordLogin:focus {
+    outline: none;
+    border-bottom: rgb(119, 219, 250) solid;
+}
+button{
+    border: none;
+    width: 140px;
+    height: 40px;
+    background: rgb(174, 206, 248);
+    margin-left: 35%;
+    margin-top:40px ;
+}
+button:hover{
+    background: rgb(120, 177, 250);
+}
