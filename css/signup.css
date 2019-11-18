@@ -7,6 +7,16 @@
     margin-left: 35%;
     border-radius: 5px;
 }
+.alertbox{
+    display: none;
+    width: 30%;
+    background: #87f3a2;
+    padding: 20px;
+    margin-top: 7%;
+    margin-left: 35%;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 body {
     background: url(../images/background.png);
