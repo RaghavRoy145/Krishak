@@ -1,0 +1,40 @@
+.locationSelectors{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.locateLocation{
+    width: 30%;
+    font-size: 1.2rem;
+    height: 40px;
+    background: rgb(182, 210, 252);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.selectLocation{
+    width: 30%;
+    font-size: 1.2rem;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.mainContent{
+    width: 90%;
+    margin-left: 5%;
+    /* background: rgb(250, 250, 250); */
+    margin-top: 50px;
+    border-radius: 5px;
+}
+.stateImage{
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-top: 20px;
+}
+.stateName{
+    margin-left: 30px;
+    font-family: sans-serif;
+}

@@ -27,7 +27,7 @@ body {
     margin-top: 50px;
 }
 
-button {
+.submit {
     border: none;
     width: 140px;
     height: 40px;
@@ -36,6 +36,6 @@ button {
     margin-top: 40px;
 }
 
-button:hover {
+.submit:hover {
     background: rgb(120, 177, 250);
 }
