@@ -21,7 +21,7 @@
         </div>
         <div class="nav-right">
             <a class="active" href="signup.php">Sign Up</a>
-            <a href="login.html">Login</a>
+            <a href="login.php">Login</a>
         </div>
     </div>
     <div class="alertbox">
@@ -44,12 +44,12 @@
             alertText.innerText = "Successfully Signed up with " + username;
         }
 
-        function signUpFail() {
+        function signUpFail(err) {
             let alertBox = document.getElementsByClassName('alertbox')[0];
             alertBox.style.display = "block";
             alertBox.style.background = "#fc5151";
             let alertText = document.getElementsByClassName('alerttext')[0];
-            alertText.innerText = "Sign Up Failed. Please try again after a while.";
+            alertText.innerText = "Sign Up Failed. " + err;
         }
     </script>
     <?php
@@ -65,17 +65,27 @@
         $password = $_POST["password"];
         $confirmPassword = $_POST["confirmPass"];
         $email = $_POST["email"];
-        // echo "<script>alert('Success!  " . $name . $username . $email . $password . $confirmPassword . "');</script>";
-        $sql = "INSERT INTO Users (Name,Username, Password, Email) VALUES (?,?,?,?)";
-        $stmt = $link->prepare($sql);
-        $stmt->bind_param("ssss", $name, $username, $password, $email);
-        $stmt->execute();
-        if ($sql) {
-            echo "<script>signUpSuccess('" . $username . "');</script>";
-            mysqli_close($link);
+        $emailCheck = "SELECT * FROM Users WHERE Email = '$email'";
+        $userCheck = "SELECT * FROM Users WHERE Username = '$username'";
+        if (mysqli_num_rows(mysqli_query($link, $emailCheck))) {
+            echo "<script>signUpFail('Email already exists. Try logging in.')</script>";
+        } else if (mysqli_num_rows(mysqli_query($link, $userCheck))) {
+            echo "<script>signUpFail('Username already exists. Try choosing another one.')</script>";
+        } else if ($password != $confirmPassword) {
+            echo "<script>signUpFail('Passwords do not match! Try again')</script>";
         } else {
-            echo "<script>signUpFail();</script>";
-            mysqli_close($link);
+            // echo "<script>alert('Success!  " . $name . $username . $email . $password . $confirmPassword . "');</script>";
+            $sql = "INSERT INTO Users (Name,Username, Password, Email) VALUES (?,?,?,?)";
+            $stmt = $link->prepare($sql);
+            $stmt->bind_param("ssss", $name, $username, $password, $email);
+            $stmt->execute();
+            if ($sql) {
+                echo "<script>signUpSuccess('" . $username . "');</script>";
+                mysqli_close($link);
+            } else {
+                echo "<script>signUpFail();</script>";
+                mysqli_close($link);
+            }
         }
     }
     ?>

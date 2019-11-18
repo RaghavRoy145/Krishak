@@ -37,7 +37,7 @@ body{
     outline: none;
     border-bottom: rgb(119, 219, 250) solid;
 }
-button{
+.submit{
     border: none;
     width: 140px;
     height: 40px;
@@ -45,6 +45,16 @@ button{
     margin-left: 35%;
     margin-top:40px ;
 }
-button:hover{
+.submit:hover{
     background: rgb(120, 177, 250);
+}
+.alertbox {
+    display: none;
+    width: 30%;
+    background: #87f3a2;
+    padding: 20px;
+    margin-top: 7%;
+    margin-left: 35%;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
