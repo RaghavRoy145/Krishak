@@ -5,7 +5,7 @@
     <title>
         Krishak
     </title>
-    <script src="./jquery.min.js"></script>
+    <script src="./scripts/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="stylesheet" href="./css/login.css" />
@@ -20,7 +20,8 @@
             <a href="./index.html">Home</a>
             <a href="./weather.html">Weather</a>
             <a href="./marketplace.php">Market Place</a>
-            <a href="./forums.html">Forums</a>
+            <a href="./forums.php">Forums</a>
+            <a href="./tips.html">Tips</a>
         </div>
         <div class="nav-right">
             <a href="signup.php">Sign Up</a>
@@ -54,9 +55,10 @@
             var time = now.getTime();
             time += 3600 * 1000;
             now.setTime(time);
-            document.cookie ='currentUser=' + user +'; expires=' + now.toUTCString() +'; path=/';
+            document.cookie = 'currentUser=' + user + '; expires=' + now.toUTCString() + '; path=/';
             console.log(document.cookie);
-        }
+            window.location.href="./index.html";
+    }
     </script>
     <?php
     if (isset($_POST['save'])) {

@@ -5,7 +5,7 @@
     <title>
         Krishak
     </title>
-    <script src="./jquery.min.js"></script>
+    <script src="./scripts/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="stylesheet" href="./css/signup.css" />
@@ -17,7 +17,8 @@
             <a href="./index.html">Home</a>
             <a href="./weather.html">Weather</a>
             <a href="./marketplace.php">Market Place</a>
-            <a href="./forums.html">Forums</a>
+            <a href="./forums.php">Forums</a>
+<a href="./tips.html">Tips</a>
         </div>
         <div class="nav-right">
             <a class="active" href="signup.php">Sign Up</a>

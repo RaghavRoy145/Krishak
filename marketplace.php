@@ -15,7 +15,8 @@
             <a class="active" href="index.html">Home</a>
             <a href="./weather.html">Weather</a>
             <a href="./marketplace.php">Market Place</a>
-            <a href="./forums.html">Forums</a>
+            <a href="./forums.php">Forums</a>
+<a href="./tips.html">Tips</a>
         </div>
         <div class="nav-right">
             <a href="signup.php">Sign Up</a>

@@ -114,7 +114,28 @@ body {
     height: 200px;
     left: 45%;
 }
+.farmerImage:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
 .mainContent{
     position: absolute;
     top: 100%;
+    padding: 5%;
+}
+.continueButton{
+    position: absolute;
+    bottom: 10%;
+    left: 43%;  
+    font-size: 2rem;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    background: #7a797965;
+    opacity: 0;
+}
+.continueButton:hover{
+    background: #7a7979cb;
+    transform: scale(1.01);
 }

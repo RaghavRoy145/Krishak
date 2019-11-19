@@ -7,48 +7,50 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="./weather.html">Weather</a>
+            <a href="./marketplace.php">Market Place</a>
+            <a href="./forums.php">Forums</a>
+            <a class="active"  href="./tips.html">Tips</a>
+        </div>
+        <div class="nav-right">
+            <a href="signup.php">Sign Up</a>
+            <a href="login.php">Login</a>
+        </div>
+    </div>
     <div class="locationSelectors">
         <button class="locateLocation" onclick="getLocation()">Locate my Location</button>
         <select class="selectLocation" onchange="changeState(value)">
             <option>Choose your state</option>
-            <option value="AP">Andhra Pradesh</option>
-            <option value="AR">Arunachal Pradesh</option>
-            <option value="AS">Assam</option>
             <option value="BR">Bihar</option>
             <option value="CT">Chhattisgarh</option>
-            <option value="GA">Goa</option>
             <option value="GJ">Gujarat</option>
             <option value="HR">Haryana</option>
             <option value="HP">Himachal Pradesh</option>
             <option value="JK">Jammu and Kashmir</option>
             <option value="JH">Jharkhand</option>
             <option value="KA">Karnataka</option>
-            <option value="KL">Kerala</option>
             <option value="MP">Madhya Pradesh</option>
             <option value="MH">Maharashtra</option>
-            <option value="MN">Manipur</option>
-            <option value="ML">Meghalaya</option>
-            <option value="MZ">Mizoram</option>
-            <option value="NL">Nagaland</option>
-            <option value="OR">Odisha</option>
             <option value="PB">Punjab</option>
             <option value="RJ">Rajasthan</option>
-            <option value="SK">Sikkim</option>
-            <option value="TN">Tamil Nadu</option>
-            <option value="TG">Telangana</option>
-            <option value="TR">Tripura</option>
-            <option value="UT">Uttarakhand</option>
             <option value="UP">Uttar Pradesh</option>
             <option value="WB">West Bengal</option>
         </select>
     </div>
     <div class="mainContent">
-        <img src="./images/sample.jpeg" class="stateImage"/>
+        <img src="https://image.flaticon.com/icons/svg/1455/1455689.svg" class="stateImage" />
         <br>
         <h1 class="stateName">State Name</h1>
+        <br>Some of the recommended crops are -
+        <ul class="cropsGrown"></ul>
+        <br>Some of the common Soil Types are -
+        <ul class="soilTypes"></ul>
     </div>
-    <script src="./jquery.min.js"></script>
-    <script src="./tips.js"></script>
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/tips.js"></script>
 </body>
 
 </html>
