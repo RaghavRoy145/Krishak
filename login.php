@@ -5,7 +5,7 @@
     <title>
         Krishak
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="stylesheet" href="./css/login.css" />
@@ -19,7 +19,7 @@
         <div class="nav-left">
             <a href="./index.html">Home</a>
             <a href="./weather.html">Weather</a>
-            <a href="./marketplace.html">Market Place</a>
+            <a href="./marketplace.php">Market Place</a>
             <a href="./forums.html">Forums</a>
         </div>
         <div class="nav-right">
@@ -50,7 +50,12 @@
         }
 
         function setUser(user) {
-            window.localStorage.setItem('currentUSer', user);
+            var now = new Date();
+            var time = now.getTime();
+            time += 3600 * 1000;
+            now.setTime(time);
+            document.cookie ='currentUser=' + user +'; expires=' + now.toUTCString() +'; path=/';
+            console.log(document.cookie);
         }
     </script>
     <?php
@@ -66,7 +71,7 @@
         $check = "SELECT * FROM Users WHERE Username = '$username' AND Password = '$password' ";
         // echo "<script>alert(".mysqli_num_rows(mysqli_query($link, $check)).");</script>";
         if (mysqli_num_rows(mysqli_query($link, $check))) {
-            echo "<script>setUSer('" . $username . "')</script>";
+            echo "<script>setUser('" . $username . "')</script>";
         } else {
             echo "<script>signUpFail('Username or Password is incorrect!')</script>";
         }

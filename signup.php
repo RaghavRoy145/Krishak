@@ -5,7 +5,7 @@
     <title>
         Krishak
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="stylesheet" href="./css/signup.css" />
@@ -16,7 +16,7 @@
         <div class="nav-left">
             <a href="./index.html">Home</a>
             <a href="./weather.html">Weather</a>
-            <a href="./marketplace.html">Market Place</a>
+            <a href="./marketplace.php">Market Place</a>
             <a href="./forums.html">Forums</a>
         </div>
         <div class="nav-right">
@@ -81,6 +81,7 @@
             $stmt->execute();
             if ($sql) {
                 echo "<script>signUpSuccess('" . $username . "');</script>";
+            echo "<script language='javascript'>setTimeout('window.location=\"./index.html\"',1000);</script>";
                 mysqli_close($link);
             } else {
                 echo "<script>signUpFail();</script>";

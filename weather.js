@@ -29,7 +29,7 @@ function PrintDetails(res) {
   var humidity = res.currently.humidity;
   var precProb = res.currently.precipProbability;
   var cloudCover = res.currently.cloudCover;
-  document.getElementsByClassName('currentTemperature')[0].innerHTML = currentTemp + " °C";
+  document.getElementsByClassName('currentTemperature')[0].innerHTML = currentTemp + " C";
   document.getElementsByClassName('currentSummary')[0].innerHTML = summary;
   document.getElementById('humidity').innerText = humidity;
   document.getElementById('precip').innerText = precProb;
@@ -38,9 +38,9 @@ function PrintDetails(res) {
     var h4 = document.createElement('h4');
     h4.innerText = "Day "+i;
     var p1 = document.createElement('p');
-    p1.innerText = "High Temperature : " + Math.floor((res.daily.data[i].temperatureHigh - 32) * (5 / 9)) + " °C";
+    p1.innerText = "High Temperature : " + Math.floor((res.daily.data[i].temperatureHigh - 32) * (5 / 9)) + " C";
     var p2 = document.createElement('p');
-    p2.innerText = "Low Temperature : " + Math.floor((res.daily.data[i].temperatureLow - 32) * (5 / 9)) + " °C";
+    p2.innerText = "Low Temperature : " + Math.floor((res.daily.data[i].temperatureLow - 32) * (5 / 9)) + " C";
     var p3 = document.createElement('p');
     p3.innerText = "Humidity : " + res.daily.data[i].humidity;
     var p4 = document.createElement('p');

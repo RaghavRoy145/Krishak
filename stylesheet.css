@@ -1,4 +1,4 @@
-@font-face{
+@font-face {
     font-family: krishak;
     src: url(./css/fonts/SAMAN___.TTF);
 }
@@ -7,18 +7,20 @@
     font-family: Google;
     src: url(./css/fonts/Sans.ttf);
 }
-body{
+
+body {
     background: url(./images/background.png);
 }
+
 .navbar {
     background: teal;
     overflow: hidden;
     position: fixed;
-    left:0;
+    left: 0;
     width: 100%;
     top: 0;
     z-index: 7;
-    box-shadow: 0px 5px 5px rgb(223, 222, 222);
+    box-shadow: 0px 5px 5px rgb(71, 71, 71);
     font-family: Google;
 }
 
@@ -32,22 +34,26 @@ body{
 }
 
 .navbar a:hover {
-    background-color:rgb(2, 94, 94);
-        
+    background-color: rgb(2, 94, 94);
+
 }
-.nav-right{
+
+.nav-right {
     float: right;
 }
+
 .navbar a.active {
     background-color: #4CAF50;
     color: white;
 }
-.imageCarousel{
+
+.imageCarousel {
     position: relative;
     margin-top: 70px;
     height: 350px;
 }
-.mainImageCarousel{
+
+.mainImageCarousel {
     position: absolute;
     top: 0%;
     z-index: 3;
@@ -55,6 +61,7 @@ body{
     height: 100%;
     left: 30%;
 }
+
 .leftImageCarousel {
     position: absolute;
     top: 2.5%;
@@ -64,6 +71,7 @@ body{
     left: 25%;
     opacity: 0.8;
 }
+
 .rightImageCarousel {
     position: absolute;
     top: 2.5%;
@@ -73,60 +81,40 @@ body{
     left: 45%;
     opacity: 0.8;
 }
-.title{
-    position: relative;
+
+.mainImage {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    margin-top:30px;
+    left: 0;
+}
+
+.title {
+    position: absolute;
+    width: 100%;
+    margin-top: 30%;
     text-align: center;
     font-size: 550%;
     font-family: krishak;
-}
-.des-title{
-    /* font-family: krishak; */
-    font-size: 200%;
-}
-.short-des{
-    padding-left: 20px;
-}
-.home-buttons{
-    position: relative;
-    margin-top: 50px;
-    margin-left: 10%;
-    width: 80%;
-    /* background: rgb(231, 231, 231); */
-    height: auto;
-    width: 80%;
-    border-radius: 10px;
-    /* padding: 10px; */
+    background: white;
+    left: -200%;
 }
 
-.table-img{
-    width: 40%;
-    height: 22%;
-    margin-left: 35%;
-    border-radius: 10px;
-    border:2px solid;
+.titleText {
+    opacity: 0;
+    color: white;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
-.buttons-text{
-    width: 30%;
-    height: 20%;
-    margin-left: 40%;
-    border-radius: 10px;
-    border:2px solid;
-    z-index: -1;
-    visibility: hidden;
+
+.farmerImage{
+    position: absolute;
+    top: -100%;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    left: 45%;
 }
-table{
-    border: none;
-}
-td{
-    border-style: none;
-}
-tr{
-    margin-top:90px;
-}
-.table-img:hover{
-    width: 45%;
-    height: 25%;
-    margin-left: 32.5%;
+.mainContent{
+    position: absolute;
+    top: 100%;
 }
