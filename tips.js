@@ -54,7 +54,7 @@ let stateInfo = {
     BR:{
         name:"Andhra Pradesh",
         Crops:"Rice, Wheat, Maize, Pulses, Vegetables, Fruits, Sugarcane, Jute",
-        Soil_type:"Sandy Loam soil, Loam soil, Clay soil, Clay Loam soil",
+        Soil_type:"Sandy soil, Loam soil, Clay soil, Clay Loam soil",
         image:"./images/states/IND_bihar.png"
     },
     GJ:{
