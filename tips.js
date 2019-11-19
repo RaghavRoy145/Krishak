@@ -26,12 +26,6 @@ function changeState(value){
 }
 
 let stateInfo = {
-    AP:{
-        name:"Andhra Pradesh",
-        Crops:""
-        Soil_type:""
-        image:""
-    },
     PB:{
         name:"Punjab",
         Crops:"Wheat, Rice, Maize, Barley, Pulses, Rapeseed and Mustard, Sunflower, Oil Seeds, Sugarcane, Cotton, Fruits, Vegetables",
