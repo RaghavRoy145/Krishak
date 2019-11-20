@@ -118,11 +118,6 @@ body {
     transform: scale(1.2);
     transition-duration: 1s;
 }
-.mainContent{
-    position: absolute;
-    top: 100%;
-    padding: 5%;
-}
 .continueButton{
     position: absolute;
     bottom: 10%;
@@ -138,4 +133,35 @@ body {
 .continueButton:hover{
     background: #7a7979cb;
     transform: scale(1.01);
+}
+.mainContent {
+    position: absolute;
+    top: 100%;
+    padding: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pages{
+    position: absolute;
+    margin-top: 30px;
+}
+.pageContainer{
+    padding: 20px;
+    width: 60%;
+    margin-left: 20%;
+    background: rgb(210, 210, 248);
+    margin-bottom: 20px;
+}
+.pageContainer:hover{
+    background: rgb(194, 194, 243);
+}
+.pagesButton{
+    border:none;
+    padding: 20px;
+    background: rgb(119, 142, 245);
+    color: white;
+}
+.pagesButton:hover {
+    transform:scale(1.01) ;
+    background: rgb(90, 119, 247);
+    color: white;
 }

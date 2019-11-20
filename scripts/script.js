@@ -28,7 +28,7 @@ var imageObject = {
 
 let title = document.getElementsByClassName("title")[0];
 $(".title").animate({ left: "0" }, 2000);
-$(".mainContent").hide();
+// $(".mainContent").hide();
 
 setTimeout(function () {
 	$(".titleText").animate({ opacity: "1" }, 1000);

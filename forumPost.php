@@ -12,7 +12,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="stylesheet.css" />
-    <link rel="stylesheet" href="./css/forums.css" />
+    <!-- <link rel="stylesheet" href="./css/forums.css" /> -->
+    <style>
+        .postTitle {
+            margin-top: 100px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .postAuthor {
+            margin-top: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 0.8rem;
+        }
+
+        .postDesc {
+            margin-top: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-style: italic;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,36 +52,19 @@
             <a href="login.php">Login</a>
         </div>
     </div>
-    <button class="newItem" data-toggle="modal" data-target="#exampleModal">New Post</button>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sell your item</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="forums.php" method="post">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Post Title</label>
-                            <input type="text" required class="form-control" name="postTitle" aria-describedby="emailHelp" placeholder="Enter Item Title">
-                            <small id="emailHelp" class="form-text text-muted">Please enter post title.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Post Description</label>
-                            <textarea type="text" required class="form-control" name="postDesc" aria-describedby="emailHelp" placeholder="Enter Post Description"></textarea>
-                        </div>
-                        <button type="submit" name="save" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+
+    <!-- <div class="postContainer">
+        <p class="postTitle">This is a sample title</p>
+        <p class="postAuthor">Username</p>
     </div>
+    <div class="postContainer">
+        <p class="postTitle">This is a sample title</p>
+        <p class="postAuthor">Username</p>
+    </div> -->
+
     <script>
         let cookies = document.cookie;
-        console.log(cookies);
+        // console.log(cookies);
         user = ((cookies.split(';')[0]).split('='))[1];
         // alert(user);
         if (user != undefined) {
@@ -83,25 +89,10 @@
                 window.location.reload();
             }
         }
-        setTimeout(function() {
-            let elementsArray = document.querySelectorAll(".postContainer");
-            console.log(elementsArray);
-            elementsArray.forEach(function(elem) {
-                elem.addEventListener('click', function() {
-                    let hash = ($(this)[0].children[2].innerHTML);
-                    console.log(hash);
-                    var now = new Date();
-                    var time = now.getTime();
-                    time += 3600 * 1000;
-                    now.setTime(time);
-                    document.cookie = 'currentPost=' + hash + '; expires=' + now.toUTCString() + '; path=/';
-                    window.location.href = "./forumPost.php";
-                });
-            });
-        }, 100);
     </script>
     <?php
-    $postAuthor = $_COOKIE['currentUser'];
+    $currentPost = $_COOKIE['currentPost'];
+    echo "<script>console.log('Cookie  " . $currentPost . "');</script>";
     // echo "<script>alert('" . $postAuthor . "');</script>";
     $link = mysqli_connect("localhost", "root", "", "test");
     if ($link === false) {
@@ -109,16 +100,13 @@
     } else {
         echo "<script>console.log('Success!  " . mysqli_get_host_info($link) . "');</script>";
     }
-    $all = "SELECT * FROM ForumPosts";
-    if ($result = mysqli_query($link, $all)) {
+    $getPost = "SELECT * FROM ForumPosts WHERE hash = '" . strval($currentPost) . "'";
+    if ($result = mysqli_query($link, $getPost)) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
-                echo "<div class='postContainer' id='postContainer'>";
                 echo "<p class='postTitle'>" . $row['PostTitle'] . "</p>";
-                echo "<p class='postAuthor'>" . $row['PostAuthor'] . "</p>";
-                echo "<p style='display:none'>" . $row['hash'] . "</p>";
-                echo "<small id='emailHelp' class='form-text text-muted'>Click on the post to open it.</small>";
-                echo "</div>";
+                echo "<p class='postAuthor'> Post published by " . $row['PostAuthor'] . "</p>";
+                echo "<p class='postDesc'>" . $row['PostDesc'] . "</p>";
             }
             // Close result set         
             mysqli_free_result($result);
