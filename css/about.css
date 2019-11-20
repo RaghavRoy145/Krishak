@@ -1,0 +1,69 @@
+body {
+    background: url(../images/background.png);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar {
+    background: teal;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 7;
+    box-shadow: 0px 5px 5px rgb(223, 222, 222);
+    font-family: Google;
+}
+
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: rgb(2, 94, 94);
+
+}
+
+.nav-right {
+    float: right;
+}
+
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.aboutTitle{
+    margin-top: 80px;
+    text-align: center;
+}
+.card{
+    display: inline-block;
+    background: white;
+    margin-left: 40%;
+    margin-top: 3%;
+    padding: 30px;
+    box-shadow: 0 5px 10px rgba(97, 96, 96, 0.582);
+    text-align: center;
+}
+.card:hover{
+    box-shadow: 0 10px 20px rgba(97, 96, 96, 0.582);
+}
+.profileImg{
+    width: 300px;
+    height: 300px;
+}
+.next{
+    transform:rotate(180deg) ;
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+.back{
+    width: 30px;
+    height: 30px;
+    float: left;
+}

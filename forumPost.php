@@ -19,6 +19,7 @@
             padding-left: 30px;
             padding-right: 30px;
             font-size: 1.5rem;
+            margin-left: 10%;
             font-weight: bold;
         }
 
@@ -27,13 +28,16 @@
             padding-left: 30px;
             padding-right: 30px;
             font-size: 0.8rem;
+            margin-left: 10%;
         }
 
         .postDesc {
             margin-top: 10px;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding: 30px;
             font-style: italic;
+            background: white;
+            width: 80%;
+            margin-left: 10%;
         }
     </style>
 </head>
