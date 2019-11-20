@@ -33,6 +33,12 @@
         <input type="password" name="password" placeholder="Enter password" class="passwordLogin" /><br>
         <input type="submit" name="save" onsubmit"function(e){e.preventDefault();}" class="submit">
     </form>
+    <br><br><br>
+    <div style="text-align:center;">
+        <a href="./signup.php" style="text-decoration:none">
+            Not a member? Click here to Sign up now for free!
+        </a>
+    </div>
     <script>
         function signUpSuccess(username) {
             let alertBox = document.getElementsByClassName('alertbox')[0];

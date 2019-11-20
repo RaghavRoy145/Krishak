@@ -28,7 +28,7 @@ var imageObject = {
 
 let title = document.getElementsByClassName("title")[0];
 $(".title").animate({ left: "0" }, 2000);
-// $(".mainContent").hide();
+$(".mainContent").hide();
 
 setTimeout(function () {
 	$(".titleText").animate({ opacity: "1" }, 1000);
@@ -45,7 +45,13 @@ setTimeout(function () {
 
 let cookies = document.cookie;
 console.log(cookies);
-user = ((cookies.split(';')[0]).split('='))[1];
+for(i=0;i<2;i++) {
+	var temp = ((cookies.split(';')[0]).split('='))[0];
+	if (temp == "currentUser") {
+		user = ((cookies.split(';')[0]).split('='))[1];
+		break;
+	}
+}
 // alert(user);
 if (user != undefined) {
 	var e = document.getElementsByClassName('nav-right')[0];

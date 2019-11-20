@@ -18,7 +18,7 @@
             <a href="./weather.html">Weather</a>
             <a href="./marketplace.php">Market Place</a>
             <a href="./forums.php">Forums</a>
-<a href="./tips.html">Tips</a>
+            <a href="./tips.html">Tips</a>
         </div>
         <div class="nav-right">
             <a class="active" href="signup.php">Sign Up</a>
@@ -36,6 +36,12 @@
         <input type="password" placeholder="Confirm password" name="confirmPass" class="confirmPasswordLogin textFields" /><br>
         <input type="submit" name="save" onsubmit"function(e){e.preventDefault();}" class="submit">
     </form>
+    <br><br><br>
+    <div style="text-align:center;">
+        <a href="./login.php" style="text-decoration:none">
+            Already a member? Click here to login!
+        </a>
+    </div>
     <script>
         function signUpSuccess(username) {
             let alertBox = document.getElementsByClassName('alertbox')[0];
@@ -82,7 +88,7 @@
             $stmt->execute();
             if ($sql) {
                 echo "<script>signUpSuccess('" . $username . "');</script>";
-            echo "<script language='javascript'>setTimeout('window.location=\"./index.html\"',1000);</script>";
+                echo "<script language='javascript'>setTimeout('window.location=\"./index.html\"',1000);</script>";
                 mysqli_close($link);
             } else {
                 echo "<script>signUpFail();</script>";
