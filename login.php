@@ -63,12 +63,13 @@
             now.setTime(time);
             document.cookie = 'currentUser=' + user + '; expires=' + now.toUTCString() + '; path=/';
             console.log(document.cookie);
-            window.location.href="./index.html";
-    }
+            window.location.href = "./index.html";
+        }
     </script>
     <?php
     if (isset($_POST['save'])) {
-        $link = mysqli_connect("localhost", "root", "", "test");
+        $link = mysqli_connect("localhost", "id11644415_root", "nahnotnow", "id11644415_krishak");
+        // $link = mysqli_connect("localhost", "root", "", "test");
         if ($link === false) {
             echo "<script>console.log('ERROR: Could not connect.  " . mysqli_connect_error() . "');</script>";
         } else {

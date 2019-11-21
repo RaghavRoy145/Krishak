@@ -14,6 +14,9 @@ for (i = 0; i < 2; i++) {
         user = ((cookies.split(';')[0]).split('='))[1];
         break;
     }
+    else {
+        user = undefined;
+    }
 }
 // alert(user);
 if (user != undefined) {

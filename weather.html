@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./css/weather.css" />
-    </head>
-    <body>
-        <div class="navbar">
-            <div class="nav-left">
-                <a href="./index.html">Home</a>
-                <a class="active" href="./weather.html">Weather</a>
-                <a href="./marketplace.php">Market Place</a>
-                <a href="./forums.php">Forums</a>
-<a href="./tips.html">Tips</a>
-            </div>
-            <div class="nav-right">
-                <a href="signup.php">Sign Up</a>
-                <a href="login.php">Login</a>
-            </div>
-        </div>
-        <img class="weatherImg" src="./images/sun.png">
-        <p class="headerText">Weather</p>
-        <div class="currentWeather">
-            <p style="width: 100%; font-family: Google; text-align: center; color: rgb(38, 150, 113);">Current Weather</p>
-            <p class="currentTemperature">Loading</p>
-            <p class="currentSummary">Cloudy with a chance of meatballs</p>
-            <table>
-                <tr>
-                    <th>Humidity</th>
-                    <th>Precipitation Probability</th>
-                    <th>Cloud Cover</th>
-                </tr>
-                <tr>
-                    <td id="humidity">Loading</td>
-                    <td id="precip">Loading</td>
-                    <td id="cloud">Loading</td>
-                </tr>
-            </table>
-        </div>
-        <div id="futurePredictions">
-            
-        </div>
-        <script src="./scripts/jquery.min.js"></script>
-        <script src="./scripts/weather.js"></script>
 
-    </body>
+<head>
+    <link rel="stylesheet" href="./css/weather.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="./index.html">Home</a>
+            <a class="active" href="./weather.html">Weather</a>
+            <a href="./marketplace.php">Market Place</a>
+            <a href="./forums.php">Forums</a>
+            <a href="./tips.html">Tips</a>
+        </div>
+        <div class="nav-right">
+            <a href="signup.php">Sign Up</a>
+            <a href="login.php">Login</a>
+        </div>
+    </div>
+    <img class="weatherImg" src="./images/sun.png">
+    <p class="headerText">Weather</p>
+    <div class="currentWeather">
+        <p style="width: 100%; font-family: Google; text-align: center; color: rgb(38, 150, 113);">Current Weather</p>
+        <p class="currentTemperature">Loading</p>
+        <p class="currentSummary">Cloudy with a chance of meatballs</p>
+        <table>
+            <tr>
+                <th>Humidity</th>
+                <th>Precipitation Probability</th>
+                <th>Cloud Cover</th>
+            </tr>
+            <tr>
+                <td id="humidity">Loading</td>
+                <td id="precip">Loading</td>
+                <td id="cloud">Loading</td>
+            </tr>
+        </table>
+    </div>
+    <div id="futurePredictions">
+
+    </div>
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/weather.js"></script>
+
+</body>
+
 </html>

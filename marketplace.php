@@ -90,7 +90,7 @@
         }
     </script>
     <?php
-    $link = mysqli_connect("localhost", "root", "", "test");
+    $link = mysqli_connect("localhost", "id11644415_root", "nahnotnow", "id11644415_krishak");
     if ($link === false) {
         echo "<script>console.log('ERROR: Could not connect.  " . mysqli_connect_error() . "');</script>";
     } else {

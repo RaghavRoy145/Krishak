@@ -1,9 +1,10 @@
 .postContainer{
     margin-top: 30px;
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     margin-left: 60px;
     width: 60%;
     padding: 30px;
+    border-left: 5px solid red;
 }
 .postContainer:hover{
     transition-duration: 100ms;

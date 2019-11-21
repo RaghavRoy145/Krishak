@@ -111,8 +111,9 @@
     </script>
     <?php
     $postAuthor = $_COOKIE['currentUser'];
-    // echo "<script>alert('" . $postAuthor . "');</script>";
-    $link = mysqli_connect("localhost", "root", "", "test");
+// echo "<script>alert('" . $postAuthor . "');</script>";
+$link = mysqli_connect("localhost", "id11644415_root", "nahnotnow", "id11644415_krishak");
+// $link = mysqli_connect("localhost", "root", "", "test");
     if ($link === false) {
         echo "<script>console.log('ERROR: Could not connect.  " . mysqli_connect_error() . "');</script>";
     } else {

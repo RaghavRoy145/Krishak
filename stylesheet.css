@@ -47,7 +47,7 @@ body {
     color: white;
 }
 
-.imageCarousel {
+/* .imageCarousel {
     position: relative;
     margin-top: 70px;
     height: 350px;
@@ -80,7 +80,7 @@ body {
     height: 90%;
     left: 45%;
     opacity: 0.8;
-}
+} */
 
 .mainImage {
     position: absolute;
@@ -157,7 +157,7 @@ body {
 .pagesButton{
     border:none;
     padding: 20px;
-    background: rgb(119, 142, 245);
+    background: rgb(210, 210, 248);
     color: white;
 }
 .pagesButton:hover {

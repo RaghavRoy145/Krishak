@@ -13,6 +13,9 @@ for (i = 0; i < 2; i++) {
         user = ((cookies.split(';')[0]).split('='))[1];
         break;
     }
+    else {
+        user = undefined;
+    }
 }
 // alert(user);
 if (user != undefined) {
@@ -167,7 +170,7 @@ let stateInfo = {
         name: "Jammu and Kashmir",
         Crops: "Paddy, Wheat, Maize, Barley, Bajra, Jowar, Gram, Apple, Walnuts",
         Soil_type: "Brown Forest soil, Grey Brown Podzolic soil, Red & Yellow Podzolic soil, Hills Forest soil, Mountain Meadow soil, Saline Alkali soil, Alluvial soil",
-        image: "./images/states/j-and-k.png"
+        image: "./images/states/j_and_k.png"
     },
     WB: {
         name: "West Bengal",
