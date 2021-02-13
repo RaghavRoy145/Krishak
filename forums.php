@@ -59,7 +59,16 @@
     <script>
         let cookies = document.cookie;
         console.log(cookies);
-        user = ((cookies.split(';')[0]).split('='))[1];
+        for (i = 0; i < 2; i++) {
+            var temp = ((cookies.split(';')[0]).split('='))[0];
+            if (temp == "currentUser") {
+                user = ((cookies.split(';')[0]).split('='))[1];
+                break;
+            }
+            else{
+                user = undefined;
+            }
+        }
         // alert(user);
         if (user != undefined) {
             var e = document.getElementsByClassName('nav-right')[0];
@@ -102,8 +111,9 @@
     </script>
     <?php
     $postAuthor = $_COOKIE['currentUser'];
-    // echo "<script>alert('" . $postAuthor . "');</script>";
-    $link = mysqli_connect("localhost", "root", "", "test");
+// echo "<script>alert('" . $postAuthor . "');</script>";
+$link = mysqli_connect("localhost", "id11644415_root", "nahnotnow", "id11644415_krishak");
+// $link = mysqli_connect("localhost", "root", "", "test");
     if ($link === false) {
         echo "<script>console.log('ERROR: Could not connect.  " . mysqli_connect_error() . "');</script>";
     } else {

@@ -39,13 +39,20 @@ setTimeout(function () {
 	$('.continueButton').animate({ opacity: "1" }, 1000);
 	// $(".titleText").css("box-shadow","0 0 0 white");
 }, 3000);
-setTimeout(function () {
-	$(".mainContent").show();
-}, 4000);
+
 
 let cookies = document.cookie;
 console.log(cookies);
-user = ((cookies.split(';')[0]).split('='))[1];
+for(i=0;i<2;i++) {
+	var temp = ((cookies.split(';')[0]).split('='))[0];
+	if (temp == "currentUser") {
+		user = ((cookies.split(';')[0]).split('='))[1];
+		break;
+	}
+	else {
+		user = undefined;
+	}
+}
 // alert(user);
 if (user != undefined) {
 	var e = document.getElementsByClassName('nav-right')[0];

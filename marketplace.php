@@ -12,11 +12,11 @@
 <body>
     <div class="navbar">
         <div class="nav-left">
-            <a class="active" href="index.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="./weather.html">Weather</a>
-            <a href="./marketplace.php">Market Place</a>
+            <a class="active" href="./marketplace.php">Market Place</a>
             <a href="./forums.php">Forums</a>
-<a href="./tips.html">Tips</a>
+            <a href="./tips.html">Tips</a>
         </div>
         <div class="nav-right">
             <a href="signup.php">Sign Up</a>
@@ -59,7 +59,15 @@
     <script>
         let cookies = document.cookie;
         console.log(cookies);
-        user = ((cookies.split(';')[0]).split('='))[1];
+        for (i = 0; i < 2; i++) {
+            var temp = ((cookies.split(';')[0]).split('='))[0];
+            if (temp == "currentUser") {
+                user = ((cookies.split(';')[0]).split('='))[1];
+                break;
+            } else {
+                user = undefined;
+            }
+        }
         // alert(user);
         if (user != undefined) {
             var e = document.getElementsByClassName('nav-right')[0];
@@ -82,7 +90,7 @@
         }
     </script>
     <?php
-    $link = mysqli_connect("localhost", "root", "", "test");
+    $link = mysqli_connect("localhost", "id11644415_root", "nahnotnow", "id11644415_krishak");
     if ($link === false) {
         echo "<script>console.log('ERROR: Could not connect.  " . mysqli_connect_error() . "');</script>";
     } else {
